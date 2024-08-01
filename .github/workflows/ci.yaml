@@ -64,6 +64,7 @@ jobs:
         - name: Build and Push to AWS ECR
           run: | 
             docker build -t public.ecr.aws/p3b6w3x9/eks-cluster:${{github.run_id}} .
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/p3b6w3x9
             docker push public.ecr.aws/p3b6w3x9/eks-cluster:${{github.run_id}}
 
 
