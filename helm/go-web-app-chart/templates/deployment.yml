@@ -5,7 +5,7 @@ metadata:
   labels:
     app: go-web-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: go-web-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: go-web-app-container
-        image: public.ecr.aws/p3b6w3x9/eks-cluster:v3
+        image: public.ecr.aws/p3b6w3x9/eks-cluster:{{ .Values.image.tag }}
         #imagePullPolicy: Never
         ports:
         - containerPort: 8080
