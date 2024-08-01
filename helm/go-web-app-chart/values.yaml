@@ -8,7 +8,7 @@ image:
   repository: public.ecr.aws/p3b6w3x9/eks-cluster
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "10194535474"
+  tag: "10195494958"
 
 ingress:
   enabled: false
